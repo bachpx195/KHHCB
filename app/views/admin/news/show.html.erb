@@ -1,0 +1,17 @@
+<h1><%= t(:news_title) %> : <%= @news.category_news.name %></h1>
+
+<p>
+  <%= image_tag @news.image.url(:thumb) %>
+</p>
+<p>
+<h2  class="text-left" style="color: #0000ff"><%= @news.title %></h2>
+</p>
+<p>
+  <%= raw(@news.description) %>
+</p>
+<p>
+  <%= raw(@news.content) %>
+</p>
+
+<%= link_to t(:edit), edit_admin_news_path(@news), class: 'btn btn-default' %> |
+<%= link_to t(:back), admin_news_index_path %>

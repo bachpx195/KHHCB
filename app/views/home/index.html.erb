@@ -1,0 +1,23 @@
+<!--SEARCH-->
+<%= render "shared/search" %>
+
+<!--SLIDE + BANNER 1-->
+<div class="row">
+  <%= render "slide" %>
+  <% if @banner1 != nil %>
+      <%= render "banner1" %>
+  <% end %>
+</div>
+
+<!--KHÓA HỌC NỔI BẬT-->
+<%= render 'home/featured' %>
+
+<!--LIST + VIP-->
+
+<div class="row">
+  <%= render "shared/cources" %>
+  <div class="col-lg-3">
+    <%= render('shared/vip') %>
+  </div>
+</div>
+</div>

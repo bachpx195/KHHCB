@@ -1,0 +1,11 @@
+<%= simple_form_for [:admin, @tag] do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :name, label: t(:tag_name) %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, t(:update) %> <%= link_to t(:back), admin_tags_path %>
+    </div>
+<% end %>

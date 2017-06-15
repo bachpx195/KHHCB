@@ -1,0 +1,32 @@
+<h1><%= t(:banner_index_title) %> : <%= t(:show) %></h1>
+
+<p>
+  <strong><%=t(:banner_name) %>:</strong>
+  <%= @banner.name %>
+</p>
+
+<p>
+  <strong><%=t(:banner_image) %>:</strong>
+  <%= image_tag @banner.image.url(:thumb) %>
+  <!--<%= @banner.image %>-->
+</p>
+
+
+
+<p>
+  <strong><%=t(:banner_url) %>:</strong>
+  <%= @banner.url %>
+</p>
+
+<p>
+  <strong><%=t(:banner_position) %>:</strong>
+  <%=convert_position(@banner.position)%>
+</p>
+
+<p>
+  <strong><%=t(:banner_status) %>:</strong>
+  <%=convert_status(@banner.status)%>
+</p>
+
+<%= link_to t(:edit), edit_admin_banner_path(@banner), class: 'btn btn-default' %> |
+<%= link_to t(:back), admin_banners_path %>

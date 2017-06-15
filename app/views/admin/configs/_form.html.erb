@@ -1,0 +1,12 @@
+<%= simple_form_for [:admin, @config] do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :code, label: t(:config_code) %>
+      <%= f.input :value, label: t(:config_value) %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, t(:update) %> <%= link_to t(:back), admin_configs_path %>
+    </div>
+<% end %>

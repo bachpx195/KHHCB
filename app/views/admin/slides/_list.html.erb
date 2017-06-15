@@ -1,0 +1,42 @@
+<%= simple_form_for :slides, url: destroy_multiple_admin_slides_path, :method => :delete do |f| %>
+    <br>
+    <table class="table table-bordered table-striped table-responsive">
+      <thead>
+      <tr>
+        <th><%= t(:index) %></th>
+        <th> <%= check_box_tag '' , 0, false, class: 'checkAll' %></th>
+        <th><%= t(:slide_name) %></th>
+        <th><%= t(:slide_image) %></th>
+        <th><%= t(:slide_description) %></th>
+        <th>Url</th>
+        <th><%= t(:slide_status) %></th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @slides.each_with_index do |slide , index|  %>
+          <tr>
+            <td class="text-center" width="30"><%= index %></td>
+            <th><%=check_box_tag 'ids[]' , slide.id, false, class: 'selectable-checkbox each_item' %></th>
+            <td><%= slide.name %></td>
+            <td><%= image_tag slide.image.url(:thumb) %></td>
+            <td><%= slide.description %></td>
+            <td><%= slide.url %></td>
+            <td><%= slide.status %></td>
+            <td width="190">
+              <%= link_to (raw("<button type=\"button\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-eye-open\"></span></button>")), [:admin, slide] %>
+              <%= link_to (raw("<button type=\"button\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-duplicate\"></span></button>")), duplicate_admin_slides_path(slide) %>
+              <%= link_to (raw("<button type=\"button\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-pencil\"></span></button>")), edit_admin_slide_path(slide) %>
+              <%= link_to (raw("<button type=\"button\" class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-remove\"></span></button>")), [:admin, slide], method: :delete, data: { confirm: t(:destroy_confirm) } %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <%= will_paginate @slides, :previous_label => t(:previous), :next_label => t(:next), class: 'pull-right' %>
+    </nav>
+    <%= f.button :submit, t(:delete_selected), class: 'btn btn-default' %>
+<% end %>
+<br>

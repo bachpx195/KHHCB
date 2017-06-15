@@ -1,0 +1,9 @@
+<h1><%= t(:province_index_title) %> : <%= t(:show) %></h1>
+
+<p>
+  <strong><%= t(:province_name) %></strong>
+  <%= @province.name %>
+</p>
+
+<%= link_to t(:edit), edit_admin_province_path(@province) %> |
+<%= link_to t(:back), admin_provinces_path %>

@@ -1,0 +1,34 @@
+<br/>
+
+<%= simple_form_for :feedbacks, url: destroy_multiple_admin_feedbacks_path, :method => :delete do |f| %>
+
+    <table class="table table-bordered table-striped table-responsive">
+      <thead>
+      <tr>
+        <th class="text-center"><%= t(:index) %></th>
+        <th><%= check_box_tag '' , 0, false, class: 'checkAll' %></th>
+        <th><%= t(:feedback_description) %></th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @feedbacks.each_with_index do |feedback, index| %>
+          <tr>
+            <td class="text-center" width="45"><%= index %></td>
+            <td  width="30"><%=check_box_tag 'ids[]' , feedback.id, false, class: 'selectable-checkbox each_item' %></td>
+            <td><%= feedback.description %></td>
+            <td width="190">
+              <%= link_to (raw("<button type=\"button\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-eye-open\"></span></button>")), [:admin, feedback] %>
+              <%= link_to (raw("<button type=\"button\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-duplicate\"></span></button>")), duplicate_admin_feedbacks_path(feedback) %>
+              <%= link_to (raw("<button type=\"button\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-pencil\"></span></button>")), edit_admin_feedback_path(feedback) %>
+              <%= link_to (raw("<button type=\"button\" class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-remove\"></span></button>")), [:admin, feedback], method: :delete, data: { confirm: t(:destroy_confirm) } %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @feedbacks, :previous_label => t(:previous), :next_label => t(:next), class: 'pull-right' %>
+    <br/>
+    <%= f.button :submit, t(:delete_selected), class: 'btn btn-default' %>
+<% end %>

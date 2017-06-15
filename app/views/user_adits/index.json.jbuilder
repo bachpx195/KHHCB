@@ -1,0 +1,1 @@
+json.array! @user_adits, partial: 'user_adits/user_adit', as: :user_adit

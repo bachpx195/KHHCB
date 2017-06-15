@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-lg-3">
+    <%= render 'shared/user_cources_left_sidebar', :type => 3 %>
+  </div>
+  <div class="col-lg-9">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= t(:cource_viewed) %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <table class="table table-bordered table-striped table-responsive">
+              <thead>
+              <tr>
+                <th width="45"><%= t(:index) %></th>
+                <th><%= t(:cource_name) %></th>
+                <th><%= t(:cource_category) %></th>
+                <th><%= t(:cource_cost) %></th>
+                <th><%= t(:cource_organization_name) %></th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @user_adit.each_with_index do |user_adit, index| %>
+                  <tr>
+                    <td class="text-center"><%= index + 1 %></td>
+                    <td><%= link_to user_adit.cource.name, [user_adit.cource] %></td>
+                    <td><%= user_adit.cource.category.name %></td>
+                    <td><%= number_with_delimiter(user_adit.cource.cost, delimiter: ".", separator: ",") %> VNĐ</td>
+                    <td><%= user_adit.cource.organization_name %></td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <%= will_paginate @user_adit, :previous_label => t(:previous), :next_label => t(:next), class: 'pull-right' %>
+    </div>
+  </div>
+</div>

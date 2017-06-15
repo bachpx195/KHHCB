@@ -1,0 +1,1 @@
+json.array! @cource_tags, partial: 'cource_tags/cource_tag', as: :cource_tag

@@ -1,0 +1,14 @@
+<h1><%= t(:config_index_title) %> : <%= t(:show) %></h1>
+
+<p>
+  <strong><%= t(:config_code) %>:</strong>
+  <%= @config.code %>
+</p>
+
+<p>
+  <strong><%= t(:config_value) %>:</strong>
+  <%= @config.value %>
+</p>
+
+<%= link_to t(:edit), edit_admin_config_path(@config), class: 'btn btn-default' %> |
+<%= link_to t(:back), admin_configs_path %>

@@ -1,0 +1,1 @@
+json.array! @category_news, partial: 'category_news/category_news', as: :category_news

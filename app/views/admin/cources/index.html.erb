@@ -1,0 +1,52 @@
+<!-- BACHPX start edit 20161023  -->
+
+<h1><%= t(:cource_index_title) %> (<%= @cources.total_entries %>)</h1>
+
+<%= render "search" %>
+
+<br/>
+<%= simple_form_for :cources, url: destroy_multiple_admin_cources_path, :method => :delete do |f| %>
+    <table class="table table-bordered table-striped table-responsive">
+    <thead>
+    <tr>
+      <th class="text-center"><%= t(:index) %></th>
+      <th><%= check_box_tag '' , 0, false, class: 'checkAll' %></th>
+      <th class="text-center" width="100"><%= t(:cource_category)%></th>
+      <th class="text-center" width="100"><%= t(:cource_user) %></th>
+      <th class="text-center" width="100"><%= t(:cource_name) %></th>
+      <th class="text-center"><%= t(:cource_cost) %></th>
+      <th class="text-center" width="120"><%= t(:cource_organization_name) %></th>
+      <th class="text-center" width="90"><%= t(:cource_status) %></th>
+      <th class="text-center"><%= t(:cource_featured) %></th>
+      <th class="text-center" width="90"><%= t(:cource_rate) %></th>
+      <th colspan="3" width="190"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @cources.each_with_index do |cource,index| %>
+        <tr>
+          <td class="text-center" width="45"><%= index + 1  %></td>
+          <td  width="30"><%=check_box_tag 'ids[]' , cource.id, false, class: 'selectable-checkbox each_item' %></td>
+          <td width="100"><%= cource.category.name %></td>
+          <td width="100"><%= cource.user.email.nil? ? "" : cource.user.email  %></td>
+          <td width="100"><%= cource.name %></td>
+          <td><%= convert_money(cource.cost) %></td>
+          <td width="120"><%= cource.organization_name %></td>
+          <td width="90"><%= status_convert(cource.status) %></td>
+          <td class="text-center"><%= featured_convert(cource.featured) %></td>
+          <td class="text-center" width="90"><%= cource.rate.nil? ? t(:cource_rate_nil) : cource.rate %></td>
+          <td width="190">
+            <%= link_to (raw("<button type=\"button\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-eye-open\"></span></button>")), [:admin, cource] %>
+            <%= link_to (raw("<button type=\"button\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-duplicate\"></span></button>")), duplicate_admin_cources_path(cource) %>
+            <%= link_to (raw("<button type=\"button\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-pencil\"></span></button>")), edit_admin_cource_path(cource) %>
+            <%= link_to (raw("<button type=\"button\" class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-remove\"></span></button>")), [:admin, cource], method: :delete, data: { confirm: t(:destroy_confirm) } %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+    <%= will_paginate @cources, :previous_label => t(:previous), :next_label => t(:next), class: 'pull-right' %>
+    <br>
+    <%= f.button :submit, t(:delete_selected), class: 'btn btn-default' %>
+<% end %>
+<%= render "import" %>

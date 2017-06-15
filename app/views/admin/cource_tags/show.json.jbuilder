@@ -1,0 +1,1 @@
+json.partial! "cource_tags/cource_tag", cource_tag: @cource_tag

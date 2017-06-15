@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KHOAHOCCHOBAN.VN</title>
+  <%= csrf_meta_tags %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".list-mode").hide();
+      $("#events-list").click(function(){
+
+        $("#type").val(1);
+        $(".list-mode").show();
+        $(".grid-mode").hide();
+      });
+      $("#events-grid").click(function(){
+        console.log('Grid');
+        $("#type").val(0);
+        $(".grid-mode").show();
+        $(".list-mode").hide();
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">BLOOMGOO</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="<%= 'active' if params[:controller] == 'home' %>"><a href="/">TRANG CHỦ</a></li>
+      <li class="<%= 'active' if params[:controller] == 'news' %>"><%= link_to "TIN TỨC", news_index_path %></li>
+      <li class="<%= 'active' if params[:controller] == 'feedback' %>"><%= link_to "PHẢN HỒI", feedback_new_path %></li>
+    </ul>
+
+    <% if user_signed_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to (raw("<span class=\"glyphicon glyphicon-upload\"></span> Đăng khóa học")), new_cource_path %></li>
+        <li><%= link_to (raw("<span class=\"glyphicon glyphicon-education\"></span> Quản lý khóa học")), new_cource_path %></li>
+        <li><%= link_to (raw("<span class=\"glyphicon glyphicon-log-out\"></span> Đăng xuất")), destroy_user_session_path, :method => :delete %></li>
+      </ul>
+    <% else %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to (raw("<span class=\"glyphicon glyphicon-upload\"></span> Đăng khóa học")), new_cource_path %></li>
+        <li><%= link_to (raw("<span class=\"glyphicon glyphicon-user\"></span> Đăng ký")), new_user_registration_path %></li>
+        <li><%= link_to (raw("<span class=\"glyphicon glyphicon-log-in\"></span> Đăng nhập")), new_user_session_path %></li>
+      </ul>
+    <% end %>
+  </div>
+</nav>
+
+<div class="container">
+
+  <% if (!current_page?(root_url)) %>
+  <ol class="breadcrumb">
+    <%= render_breadcrumbs :tag => :li, :separator => "" %>
+  </ol>
+      <br/>
+  <% end %>
+
+  <%= yield %>
+</div>
+</body>
+
+</html>

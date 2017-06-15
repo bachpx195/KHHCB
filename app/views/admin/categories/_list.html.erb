@@ -1,0 +1,31 @@
+<%= simple_form_for :@categories, url: destroy_multiple_admin_categories_path, :method => :delete do |f| %>
+<table class="table table-bordered table-striped table-responsive" id="sortable">
+  <thead>
+  <tr>
+    <th class="text-center"><%= t(:index) %></th>
+    <th><%= check_box_tag '' , 0, false, class: 'checkAll' %></th>
+    <th><%= t(:category_name)  %></th>
+    <th><%= t(:category_description) %></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @categories.each_with_index do |category, index| %>
+      <tr data-item-id=<%= "#{category.id}" %> class="item">
+        <td class="text-center" width="45"><%= index %></td>
+        <td width="30"><%= check_box_tag "category_ids[]", category.id, class: 'selectable-checkbox each_item' %></td>
+        <td><%= category.name %></td>
+        <td><%= category.description %></td>
+        <td width="190">
+          <%= link_to (raw("<button type=\"button\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-eye-open\"></span></button>")),  [:admin, category] %>
+          <%= link_to (raw("<button type=\"button\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-duplicate\"></span></button>")), duplicate_admin_categories_path(category) %>
+          <%= link_to (raw("<button type=\"button\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-pencil\"></span></button>")), edit_admin_category_path(category) %>
+          <%= link_to (raw("<button type=\"button\" class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-remove\"></span></button>")), [:admin, category], method: :delete, data: { confirm: t(:destroy_confirm) } %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+    <%= f.button :submit,t(:delete_selected),class: 'btn btn-default' %>
+<% end %>

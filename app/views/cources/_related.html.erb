@@ -1,0 +1,11 @@
+<!--KHÓA HỌC LIÊN QUAN KHÁC-->
+<div class="row">
+  <div class="col-lg-12">
+    <h3><%= t(:related) %></h3>
+  </div>
+    <% @courcesRelated.each_with_index do |cource, index| %>
+      <div class="col-sm-6 col-md-3">
+        <%= render 'shared/cource', :cource => cource, :type => 1 %>
+      </div>
+    <% end %>
+</div>

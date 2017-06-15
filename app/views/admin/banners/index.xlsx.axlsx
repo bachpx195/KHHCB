@@ -1,0 +1,13 @@
+wb = xlsx_package.workbook
+wb.styles do |style|
+  format_cell_header = style.add_style(bg_color: "D4AC0D", border: Axlsx::STYLE_THIN_BORDER)
+  format_cell = style.add_style(border: Axlsx::STYLE_THIN_BORDER)
+  date_cell = style.add_style(format_code: "dd/mm/yyyy", border: Axlsx::STYLE_THIN_BORDER)
+
+  wb.add_worksheet(name: "Banner") do |sheet|
+	sheet.add_row ["Tên banner", "Ảnh đại diện", "Đường dẫn", "Vị trí","Trạng thái","Ngày tạo", "Ngày cập nhật"], style: [format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header,  format_cell_header]
+    @export.each do |e|
+     sheet.add_row [e.name, e.image, e.url, e.position,e.status, e.created_at, e.updated_at], style: [format_cell, format_cell, format_cell, format_cell,format_cell, date_cell, date_cell]
+    end
+  end
+end

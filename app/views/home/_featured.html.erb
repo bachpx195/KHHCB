@@ -1,0 +1,7 @@
+<div class="row">
+  <% @featured.each_with_index do |cource, index| %>
+      <div class="col-sm-6 col-md-3">
+        <%= render 'shared/cource', :cource => cource, :type => 5 %>
+      </div>
+  <% end %>
+</div>

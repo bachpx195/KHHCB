@@ -1,0 +1,14 @@
+<h1><%= t(:category_news_index_title) %> : <%= t(:show) %></h1>
+
+<p>
+  <strong><%= t(:category_news_name) %></strong>
+  <%= @category_news.name %>
+</p>
+
+<p>
+  <strong><%= t(:category_news_description) %></strong>
+  <%= @category_news.description %>
+</p>
+
+<%= link_to t(:edit) , edit_admin_category_news_path(@category_news), class: 'btn btn-default' %> |
+<%= link_to t(:back) , admin_category_news_index_path %>

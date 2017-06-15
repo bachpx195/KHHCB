@@ -1,0 +1,16 @@
+<% if !@banner1.nil? %>
+  <%= render('shared/banner_1')%>
+<% end %>
+<div class="well">
+  <h4><%= t(:blog_categories) %></h4>
+  <div class="row">
+    <ul class="list-unstyled">
+      <% @category_news.each do |cate| %>
+          <li class="col-md-6"><%= link_to cate.name, cate_news_index_path(cate) %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<%= render('shared/vip') %>
+

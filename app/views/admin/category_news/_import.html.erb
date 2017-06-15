@@ -1,0 +1,31 @@
+<!-- Modal -->
+<div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="importModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <%= simple_form_for :import, url: import_admin_category_news_index_path, :method => :post do |f| %>
+
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="><%= t(:closed) %>">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="importModalLabel"><%= t(:import_title) %></h4>
+          </div>
+          <div class="modal-body">
+            <%= f.input :file, label: t(:import_title), as: :file %>
+          </div>
+          <div class="modal-footer">
+
+            <div class="pull-left">
+              <%= link_to t(:sample_file), "/samples/categorynews_sample.xlsx", class: "btn btn-sm btn-default", target: "_blank" %>
+            </div>
+
+            <%= f.button :submit, t(:import), class: 'btn btn-primary' %>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(:closed) %></button>
+          </div>
+
+      <%- end %>
+
+    </div>
+  </div>
+</div>

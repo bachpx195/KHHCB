@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cource Tags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cource</th>
+      <th>Tag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cource_tags.each do |cource_tag| %>
+      <tr>
+        <td><%= cource_tag.cource %></td>
+        <td><%= cource_tag.tag %></td>
+        <td><%= link_to 'Show', [:admin, cource_tag] %></td>
+        <td><%= link_to 'Edit', edit_admin_cource_tag_path(cource_tag) %></td>
+        <td><%= link_to 'Destroy', [:admin, cource_tag], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cource Tag', new_admin_cource_tag_path %>

@@ -1,0 +1,2 @@
+module UserAditsHelper
+end

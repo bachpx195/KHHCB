@@ -1,0 +1,29 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= t(:user_cource_manager) %></h3>
+  </div>
+  <div class="panel-body">
+    <ul class="nav nav-pills nav-stacked">
+      <div clas="col-lg-12">
+        <li role="presentation"
+            <% if (type == 1) %> class="active"
+            <% end %> ><%= link_to t(:user_cource_register), new_cource_path %></li>
+      </div>
+      <div clas="col-lg-12">
+        <li role="presentation"
+            <% if (type == 2) %> class="active"
+            <% end %> >
+          <%= link_to t(:user_cources_registed), registed_cources_path %>
+          <span class="badge pull-right"> <%= @posted_cources.count() %></span>
+        </li>
+      </div>
+      <div clas="col-lg-12">
+        <li role="presentation"
+            <% if (type == 3) %> class="active"
+            <% end %> ><%= link_to t(:user_cources_viewed), viewed_cources_path %>
+          <span class="badge pull-right"> <%= @user_adit.count() %></span>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>

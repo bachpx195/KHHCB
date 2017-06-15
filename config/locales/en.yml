@@ -1,0 +1,337 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  ckeditor:
+      page_title: 'CKEditor Files Manager'
+      confirm_delete: 'Delete file?'
+      buttons:
+        cancel: 'Cancel'
+        upload: 'Upload'
+        delete: 'Delete'
+        next: 'Next'
+  hello: "Hello world"
+  # BLOOMGOO ADD 20161024
+  new: "New"
+  edit: "Edit"
+  update: "Update"
+  destroy: "Delete"
+  destroy_confirm: "Are you sure?"
+  show: "Details"
+  back: "Back"
+  previous: "&laquo; Previous"
+  next: "Next &raquo;"
+  search: "Search"
+  export: "Export"
+  import: "Import"
+  import_title: "Import file Excel"
+  saved: "Saved"
+  closed: "Closed"
+  created: "Add New successful"
+  updated: "Update successful"
+  destroyed: "Delete successful"
+  import_success: "Import successful"
+  import_error: "Please choose a file"
+  sample_file: "Sample File"
+  import_error: "Import error."
+  index: "No."
+  select_all: "Select all"
+  delete_selected: "Delete selected"
+  quick_link: "Quick link"
+  statistic: "Statistic"
+  readmore: "Readmore"
+  valid: "not valid"
+  time: "Time"
+  time_pass: "Pass"
+  time_coming: "Coming"
+  time_in_progress: "In progress"
+  cost: "Cost"
+  cost_free: "Free"
+  cost_cost: "Cost"
+  province: "Province"
+  category: "Category"
+  cource_posted: "List cource posted"
+  cources: "List cources"
+  login: "Login"
+  sign_up: "Sign up"
+  forgot_password: "Forgot your password"
+  password_confirmation: "Password confirmation"
+  password_instructions: "Send me reset password instructions"
+  current_password: "Current password"
+  current_password_hint: "we need your current password to confirm your changes"
+  password_hint:  "leave it blank if you don't want to change it"
+  cancel_account: "Cancel my account"
+  unhappy: "Unhappy?"
+  characters_minimum: "characters minimum"
+  remember: "Remember me"
+  resend_unlock_instructions: "Resend unlock instructions"
+  send: "Send"
+
+  # SCREEN DASHBOARD
+  dashboard_index_title: "Dashboard"
+  dashboard_new_title: "Add new"
+  dashboard_edit_title: "Edit"
+  dashboard_show_title: "Details"
+  dashboard_col1: "Column 1"
+  dashboard_col2: "Column 2"
+  dashboard_col3: "Column 3"
+  dashboard_image: "Image:"
+  dashboard_search_placeholder: "Enter a value to search column 1"
+  delete_mutiple_alert: "Please choose at least one element."
+  #BLOOMGOO END ADD 20161024
+
+  # PHONGVD ADD 20161024
+  # SCREEN USER
+  user_index_title: "User"
+  user_new_title: "Add new"
+  user_edit_title: "Edit"
+  user_show_title: "Details"
+  user_group: "Group users"
+  user_first_name: "First name"
+  user_last_name: "Last name"
+  user_avatar: "Avatar"
+  user_birthday: "Birthday"
+  user_phone: "Phone"
+  user_address: "Address"
+  user_description: "Description"
+  user_website: "Website"
+  user_facebook: "Facebook"
+  user_organization: "Organization"
+  user_actived: "Actived"
+  user_email: "Email"
+  user_password: "Password"
+  user_search_placeholder: "Enter first name to search"
+  user_actived_0: "Unchecked"
+  user_actived_1: "Checked"
+  user_actived_2: "Locked"
+  create: "Create"
+  # PHONGVD END ADD 20161024
+
+  # LUANLV ADD 20161025
+  # SCREEN PROVINCE
+  province_index_title: "Provinces"
+  province_new_title: "Add new"
+  province_edit_title: "Edit"
+  province_show_title: "Details"
+  province_name: "Province name"
+  province_search_placeholder: "Enter the name of provinces"
+  province_import_error: "province import error"
+  province_import_success: "province import success"
+
+  #LUANLV END ADD 20161025
+
+  # TOANDK START 20161025
+  news_title: "News"
+  news_search_placeholder: "Enter the news headlines to search"
+  news_category: "Category"
+  news_image: "Image"
+  news_description: "Description"
+  news_content: "Content"
+  news_add: "Add news"
+  news_edit: "Edit news"
+  viewed_count: "Viewed"
+
+  # TOANDK END 20161025
+
+#THANHPV ADD 20161025
+  group_search_placeholder: "Search for users"
+  group_index_title: "Group users"
+  group_label_description: "Description"
+  group_label_name: "User group names"
+  group_placeholder_name: "Enter the user group name"
+  group_label_level: "Level"
+  group_new_title: "Add new"
+  group_update_successfull: "Group update successful"
+  group_create_successfull: "Group create successful"
+  group_destroyed_successfull: "Group destroyed successful "
+  group_level_selector: "Please select level of group user"
+  group_status_0: "SuperAdmin"
+  group_status_1: "Admin"
+  group_status_2: "User"
+  group_status_3: "No infomation"
+
+  #THANHPV END ADD 20161025
+  # SCREEN COURCE
+  cource_index_title: "Cource"
+  cource_new_title: "Add"
+  cource_edit_title: "Edit"
+  cource_show_title: "Details"
+  cource_category: "Category"
+  cource_user: "User"
+  cource_name: "Name"
+  cource_province: "Province"
+  cource_start_date: "Start date"
+  cource_schedule: "Schedule"
+  cource_date: "Date"
+  cource_duration: "Duration"
+  cource_end_date: "End date"
+  cource_address: "Address"
+  cource_cost: "Cost"
+  cource_cost_description: "Cost description"
+  cource_promotion: "Promotion"
+  cource_promotion_description: "Promotion description"
+  cource_image: "Image"
+  cource_content: "Content"
+  cource_representative: "Representative"
+  cource_hotline: "Hotline"
+  cource_organization_name: "Organization name"
+  cource_organization_address: "Organization address"
+  cource_organization_phone: "Organization phone"
+  cource_organization_email: "Organization email"
+  cource_organization_website: "Organization website"
+  cource_organization_facebook: "Organization facebook"
+  cource_status: "Status"
+  cource_featured: "Featured"
+  cource_rate: "Rate"
+  cource_category_selector: "--Category selector--"
+  cource_user_selector: "--User selector--"
+  cource_province_selector: "--Province selector--"
+  cource_status_selector: "--Status selector--"
+  cource_featured_selector: "--Featured selector--"
+  cource_rate_selector: "--Rate selector--"
+  cource_time_selector: "-- Select time --"
+  cource_cost_selector: "-- Select price --"
+  cource_search_placeholder: "Cource search placeholder"
+  cource_status_0: "Preparing"
+  cource_status_1: "Sent request"
+  cource_status_2: "Approval"
+  cource_status_3: "Disapproval"
+  cource_status_4: "None"
+  cource_featured_0: "Common"
+  cource_featured_1: "Highlights"
+  cource_featured_2: "VIP (sponsored)"
+  cource_featured_3: "None"
+  cource_rate_nil: "None"
+  cource_lastest: "Lastest cources"
+  cource_featured: "Feature cources"
+  cource_vip: "VIP cources"
+  cource_email: "Cource email"
+  cource_seen: "Cources have been seen"
+
+
+  #BACHPX END ADD 20161024
+
+    #BACHPX START 
+  # MESSAGE ERROR
+    # errors_messages_email: "Please insert a valid email address."
+    # errors_messages_url: "Please insert a valid url."
+  #BACHPX END
+  #THUYNT START 20161026
+  #SCREEN BANNER
+  banner_index_title: "Banner"
+  banner_new_title: "Add new"
+  banner_edit_title: "Edit"
+  banner_show_title: "Details"
+  banner_name: "Banner name"
+  banner_search_placeholder: "Enter the banner name"
+  banner_image: "Avatar"
+  banner_url: "Url"
+  banner_position: "Position"
+  banner_status: "Status"
+  banner_position_1: "Position 1 right next slide"
+  banner_position_2: "Location alternating between courses list"
+  banner_status_0: "Not displayed"
+  banner_status_1: "Show"
+  banner_size_image_hint: "Minimun size for image is 300px*300px"
+  #THUYNT END 20161026
+
+  #TRANGPT START 20161027
+  #SCREEN CATEGORY_NEWS
+  category_news_index_title: "News category"
+  category_news_new_title: "Add new"
+  category_news_edit_title: "Edit"
+  category_news_show_title: "Details"
+  category_news_name: "Name"
+  category_news_description: "Description"
+  category_news_search_placeholder: "Enter the name"
+  #TRANGPT END 20161027
+
+  #ThinhLV START 20161028
+  #SCREEN SLIDES
+  slide_index_title: "Slides"
+  slide_new_title: "Add new"
+  slide_edit_title: "Edit"
+  slide_show_title: "Details"
+  slide_name: "Name"
+  slide_description: "Description"
+  slide_placeholder: "Enter the name of slide"
+  slide_image: "Image"
+  slide_status: "Status"
+  #Thinhlv End 20161028
+  # SCREEN CATEGORIES
+  category_index_title: "Categories"
+  category_new_title: "Add new"
+  category_edit_title: "Edit"
+  category_show_title: "Show"
+  category_name: "Category name"
+  category_search_placeholder: "Enter the Category name"
+  category_order: "Order"
+  category_description: "Description"
+  undestroy_category: "Can't delete.Please delete cources belongs this!"
+  # END SONDN 20161029
+  # Luan star Configs 20161102
+  config_index_title: "config index title"
+  config_import_error: "config import error"
+  config_import_success: "config import success"
+  config_code: "config code"
+  config_value: "config value"
+  config_search_placeholder: "config search placeholder"
+  config_index_title: "config index title"
+  config_edit_title: "config edit title"
+  config_new_title: " config new title"
+  # Luan end Configs 20161102
+
+  # Luan star tags 20161102
+  tag_index_title: "tag index title"
+  tag_import_error: "tag import error"
+  tag_import_success: "tag import success"
+  tag_name: "tag name"
+  tag_search_placeholder: "tag search placeholder"
+  tag_index_title: "tag index title"
+  tag_edit_title: "tag edit title"
+  tag_index_title: "tag index title"
+
+  # Luan end tags 20161102
+
+  # Luan star tags 20161110
+  user_cource_manager: "user cource manager"
+  user_cource_register: "user cource register"
+  user_cources_registed: "user cources registed"
+  user_cources_viewed: "user cources viewed"
+  cource_registed: "cource registed"
+  cource_viewed: "cource viewed"
+  cource_draft: "cource draft"
+  cource_pendding_approved: "cource pendding approved"
+  # Luan end tags 20161110
+
+  #DuyAnh
+ # feedbacks_search_placeholder: "Please enter your description"
+ # feedbacks_index_title: "Feedbacks"
+ # feedbacks_new_title: "Add new"
+  #DuyAnhend
+
+  #BACHPX START 
+  #MESSAGE ERROR
+    # errors_messages_email: "Please insert a valid email address."
+    # errors_messages_url: "Please insert a valid url."
+  #BACHPX END
+
+

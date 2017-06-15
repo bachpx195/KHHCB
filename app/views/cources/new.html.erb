@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-lg-3">
+    <%= render 'shared/user_cources_left_sidebar', :type => 1 %>
+  </div>
+  <div class="col-lg-9">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= t(:user_cource_register)%></h3>
+      </div>
+      <div class="panel-body">
+        <%= render 'form', cource: @cource %>
+      </div>
+    </div>
+  </div>
+</div>

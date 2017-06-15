@@ -1,0 +1,28 @@
+<p>
+  <strong><%=t(:slide_name)%>:</strong>
+  <%= @slide.name %>
+</p>
+
+<p>
+  <strong><%=t(:slide_image)%>:</strong>
+  <%= image_tag @slide.image.url(:thumb) %>
+</p>
+
+<p>
+  <strong><%=t(:slide_description)%>:</strong>
+  <%= @slide.description %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @slide.url %>
+</p>
+
+<p>
+  <strong><%=t(:slide_status)%>:</strong>
+  <%= @slide.status %>
+</p>
+
+<%= link_to t(:edit), edit_admin_slide_path(@slide) %> |
+<%= link_to t(:back), admin_slides_path %>
+<br>

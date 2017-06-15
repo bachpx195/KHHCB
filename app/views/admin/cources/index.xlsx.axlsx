@@ -1,0 +1,13 @@
+wb = xlsx_package.workbook
+wb.styles do |style|
+  format_cell_header = style.add_style(bg_color: "D4AC0D", border: Axlsx::STYLE_THIN_BORDER)
+  format_cell = style.add_style(border: Axlsx::STYLE_THIN_BORDER)
+  date_cell = style.add_style(format_code: "dd/mm/yyyy", border: Axlsx::STYLE_THIN_BORDER)
+
+  wb.add_worksheet(name: "Khóa học") do |sheet|
+	sheet.add_row ["Thể loại", "Người tạo", "Tên", "Tỉnh thành", "Thời gian khai giảng", "Lịch học", "Thời gian diễn ra", "Thời lượng", "Thời gian kết thúc", "Địa điểm", "Học phí", "Mô tả học phí", "Ưu đãi", "Mô tả ưu đãi", "Hình ảnh", "Nội dung", "Người đại diện", "Email", "Hotline", "Đơn vị tổ chức", "Địa chỉ đơn vị tổ chức", "Số điện thoại đơn vị tổ chức", "Email đơn vị tổ chức", "Website đơn vị tổ chức", "Facebook đơn vị tổ chức", "Trạng thái", "Nổi bật", "Đánh giá", "Ngày tạo", "Ngày cập nhật"], style: [format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header, format_cell_header]
+    @export.each do |e|
+     sheet.add_row [e.category.name, e.user.email, e.name, e.province.name, e.start_date, e.schedule, e.cource_date, e.duration, e.end_date, e.address, e.cost, e.cost_description, e.promotion, e.promotion_description, e.image, e.content, e.representative, e.email, e.hotline, e.organization_name, e.organization_address, e.organization_phone, e.organization_email, e.organization_website, e.organization_facebook, e.status, e.featured, e.rate, e.created_at, e.updated_at], style: [format_cell, format_cell, format_cell, format_cell, date_cell, date_cell]
+    end
+  end
+end

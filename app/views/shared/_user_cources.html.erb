@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-lg-12">
+    <table class="table table-bordered table-striped table-responsive">
+      <thead>
+      <tr>
+        <th width="45"><%= t(:index) %></th>
+        <th><%= t(:cource_name) %></th>
+        <th><%= t(:cource_category)%></th>
+        <th><%= t(:cource_cost) %></th>
+        <th><%= t(:cource_organization_name) %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @cources.each_with_index do |cource,index| %>
+          <tr>
+            <td class="text-center"><%= index + 1  %></td>
+            <td><%= link_to  cource.name, [cource] %></td>
+            <td><%= cource.category.name %></td>
+            <td><%= number_with_delimiter(cource.cost, delimiter: ".", separator: ",") %> VNĐ</td>
+            <td><%= cource.organization_name %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

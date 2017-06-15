@@ -1,0 +1,34 @@
+<%= simple_form_for [:admin, @user] do |f| %>
+    <!--PHONGVD UPDATE 20161024-->
+    <div class="form-inputs">
+      <%= f.association :group, include_blank: t(:group_selector), :label_method => lambda { |group| "#{group.name}" }, label: t(:group_index_title) %>
+      <%= f.input :first_name, label: t(:user_first_name) %>
+      <%= f.input :last_name, label: t(:user_last_name) %>
+      <%= f.input :email, label: t(:user_email) %>
+      <%= f.input :password, label: t(:user_password) %>
+      <!--TOANDK EDIT 17-11-2016-->
+      <div id="pictureInput">
+        <%= f.input :image, label: t(:user_avatar), as: :file %>
+      </div>
+      <div id="target">
+        <% if !@user.avatar.blank? %>
+            <img src="<%= @user.avatar.url %>" style="max-height: 100px; width: auto%">
+        <% end %>
+      </div>
+      <br>
+      <!--TOANDK EDIT 17-11-2016-->
+      <%= f.input :birthday, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year,
+                  order: [:day, :month, :year], label: t(:user_birthday) %>
+      <%= f.input :phone, label: t(:user_phone) %>
+      <%= f.input :address, label: t(:user_address) %>
+      <%= f.input :description, label: t(:user_description) %>
+      <%= f.input :website, label: t(:user_website) %>
+      <%= f.input :facebook, label: t(:user_facebook) %>
+      <%= f.input :organization, label: t(:user_organization) %>
+      <%= f.input :actived, label: t(:user_actived), :collection => [[t(:user_actived_0), 0], [t(:user_actived_1), 1], [t(:user_actived_2), 2]], :default => [t(:user_actived_2), 2] %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, t(:update) %> <%= link_to t(:back), admin_users_path %>
+    </div>
+
+<% end %>

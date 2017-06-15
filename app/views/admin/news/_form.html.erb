@@ -1,0 +1,27 @@
+<%= simple_form_for [:admin, @news] do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.association :category_news, label: t(:news_category) %>
+      <%= f.input :title, label: t(:news_title) %>
+      <!--TOANDK EDIT 17-11-2016-->
+      <div id="pictureInput">
+        <%= f.input :image, label: t(:news_image), as: :file %>
+      </div>
+      <div id="target">
+        <% if !@news.image.blank? %>
+            <img src="<%= @news.image.url %>" style="max-height: 100px; width: auto%">
+        <% end %>
+      </div>
+      <br>
+      <!--TOANDK EDIT 17-11-2016-->
+
+      <%= f.input :description, label: t(:news_description), as: :ckeditor, input_html: {ckeditor: {toolbar: 'Full'}} %>
+      <%= f.input :content, label: t(:news_content), as: :ckeditor, input_html: {ckeditor: {toolbar: 'Full'}} %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, t(:update) %> <%= link_to t(:back), admin_news_index_path %>
+    </div>
+<% end %>
+<br>

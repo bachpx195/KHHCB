@@ -1,0 +1,347 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+vi:
+  ckeditor:
+      page_title: 'CKEditor Files Manager'
+      confirm_delete: 'Bạn chắc chắn muốn xóa??'
+      buttons:
+        cancel: 'Hủy'
+        upload: 'Tải lên'
+        delete: 'Xóa'
+        next: 'Tiếp theo'
+  hello: "Xin chào"
+  # BLOOMGOO ADD 20161024
+  new: "Thêm mới"
+  edit: "Sửa"
+  update: "Cập nhật"
+  destroy: "Xóa"
+  destroy_confirm: "Bạn chắc chắn muốn xóa?"
+  show: "Chi tiết"
+  back: "Quay lại"
+  previous: "&laquo; Trước"
+  next: "Tiếp theo &raquo;"
+  search: "Tìm kiếm"
+  export: "Xuất"
+  import: "Nhập"
+  import_title: "Nhập vào file Excel"
+  saved: "Lưu"
+  closed: "Đóng"
+  created: "Thêm mới thành công."
+  updated: "Cập nhật thành công."
+  destroyed: "Xóa thành công."
+  import_success: "Import thành công."
+  missing_value: "Danh mục thông tin chưa chính xác! Kiểm tra lại thư mục nhập vào"
+  sample_file: "File mẫu"
+  import_error: "Import không thành công."
+  require: "không được trống"
+  dashboard_index_title: "Bảng tin"
+  dashboard_new_title: "Thêm mới"
+  dashboard_edit_title: "Chỉnh sửa"
+  dashboard_show_title: "Chi tiết"
+  dashboard_col1: "Cột 1"
+  dashboard_col2: "Cột 2"
+  dashboard_col3: "Cột 3"
+  dashboard_image: "Hình ảnh"
+  dashboard_search_placeholder: "Nhập giá trị cột 1 để tìm kiếm"
+  order_not_valid: "Vị trí không hợp lệ"
+  index: "STT"
+  select_all: "Chọn tất cả"
+  create: "Tạo mới"
+  delete_selected: "Xóa nhiều"
+  delete_mutiple_alert: "Vui lòng chọn ít nhất một phần tử."
+  quick_link: "Liên kế nhanh"
+  statistic: "Thông tin thống kê"
+  readmore: "Xem thêm"
+  valid: "không hợp lệ"
+  time: "Thời gian"
+  time_pass: "Đã diễn ra"
+  time_coming: "Sắp diễn ra"
+  time_in_progress: "Đang diễn ra"
+  cost: "Giá"
+  cost_free: "Miễn phí"
+  cost_cost: "Mất phí"
+  province: "Tỉnh thành"
+  category: "Thể loại"
+  cources: "Danh sách khóa học"
+  login: "Đăng nhập"
+  sign_up: "Đăng kí"
+  forgot_password: "Quên mật khẩu?"
+  password_confirmation: "Nhập lại mật khẩu"
+  password_instructions: "Gửi hướng dẫn khôi phục mật khẩu"
+  current_password: "Mật khẩu hiện tại"
+  current_password_hint: "Nhập mật khẩu hiện tại để xác nhận thay đổi"
+  password_hint:  "để trống nếu bạn không muốn thay đổi mật khẩu"
+  cancel_account: "Hủy tài khoản"
+  unhappy: "Không thích?"
+  characters_minimum: " kí tự tối thiểu"
+  remember: "Ghi nhớ mật khẩu"
+  resend_unlock_instructions: "Gửi lại hướng dẫn khôi phục tài khoản"
+  send: "Gửi"
+  #BLOOMGOO END ADD 20161024
+
+  # PHONGVD ADD 20161024
+  # SCREEN USER
+  user_index_title: "Người dùng"
+  user_new_title: "Thêm mới"
+  user_edit_title: "Chỉnh sửa"
+  user_show_title: "Chi tiết"
+  user_group: "Nhóm người dùng"
+  user_first_name: "Tên"
+  user_last_name: "Họ"
+  user_avatar: "Avatar"
+  user_birthday: "Ngày sinh"
+  user_phone: "SĐT"
+  user_address: "Địa chỉ"
+  user_description: "Mô tả"
+  user_website: "Website"
+  user_facebook: "Facebook"
+  user_organization: "Tổ chức"
+  user_actived: "Kích hoạt"
+  user_email: "Email"
+  user_password: "Mật khẩu"
+  user_search_placeholder: "Nhập tên để tìm kiếm"
+  user_actived_0: "Chưa duyệt"
+  user_actived_1: "Duyệt"
+  user_actived_2: "Khóa"
+  group_selector: "--Chọn nhóm người dùng--"
+  # PHONGVD END ADD 20161024
+
+  # LUANLV ADD 20161025
+  # SCREEN PROVINCE
+  province_index_title: "Tỉnh thành"
+  province_new_title: "Thêm mới"
+  province_edit_title: "Chỉnh sửa"
+  province_show_title: "Chi tiết"
+  province_name: "Tên tỉnh thành"
+  province_search_placeholder: "Nhập tên tỉnh thành"
+  province_import_error: "Lỗi bạn chưa chọn file để import."
+  province_import_success: "Đã import thành công file."
+
+  #LUANLV END ADD 20161025
+  # TOANDK START 20161025
+  news_title: "Tin tức"
+  news_search_placeholder: "Nhập tiêu đề tin tức để tìm kiếm"
+  news_category: "Danh mục"
+  news_image: "Hình ảnh"
+  news_description: "Mô tả"
+  news_content: "Nội dung"
+  news_add: "Thêm mới"
+  news_edit: "Chỉnh sửa"
+  viewed_count: "Số lượt xem"
+
+  # TOANDK END 20161025
+#THANHPV ADD 20161025
+  group_search_placeholder: "Tìm kiếm người dùng"
+  group_index_title: "Nhóm người dùng"
+  group_label_description: "Mô tả"
+  group_label_name: "Tên nhóm người dùng"
+  group_placeholder_name: "Nhập tên nhóm người dùng"
+  group_label_level: "Cấp bậc"
+  group_new_title: "Thêm mới"
+  group_update_successfull: "Cập nhật nhóm người dùng thành công!"
+  group_create_successfull: "Tạo mới nhóm người dùng thành công!"
+  group_destroyed_successfull: "Xóa nhóm người dùng thành công!"
+  group_level_selector: "--Chọn cấp bậc nhóm người dùng--"
+  group_status_0: "Quản trị cấp cao"
+  group_status_1: "Quản trị viên"
+  group_status_2: "Người dùng"
+  group_status_3: "Không xác định"
+  #THANHPV END ADD 20161025
+  # SCREEN COURCE
+  cource_index_title: "Khóa học"
+  cource_new_title: "Thêm mới"
+  cource_edit_title: "Chỉnh sửa"
+  cource_show_title: "Chi tiết"
+  cource_category: "Thể loại"
+  cource_user: "Người tạo"
+  cource_name: "Tên"
+  cource_province: "Tỉnh thành"
+  cource_start_date: "Thời gian khai giảng"
+  cource_schedule: "Lịch học"
+  cource_date: "Thời gian diễn ra"
+  cource_duration: "Thời lượng"
+  cource_end_date: "Thời gian kết thúc"
+  cource_address: "Địa điểm"
+  cource_cost: "Học phí"
+  cource_cost_description: "Mô tả học phí"
+  cource_promotion: "Ưu đãi"
+  cource_promotion_description: "Mô tả ưu đãi"
+  cource_image: "Hình ảnh"
+  cource_content: "Nội dung"
+  cource_representative: "Người đại diện"
+  cource_hotline: "Hotline"
+  cource_organization_name: "Đơn vị tổ chức"
+  cource_organization_address: "Địa chỉ đơn vị tổ chức"
+  cource_organization_phone: "Số điện thoại đơn vị tổ chức"
+  cource_organization_email: "Email đơn vị tổ chức"
+  cource_organization_website: "Website đơn vị tổ chức"
+  cource_organization_facebook: "Facebook đơn vị tổ chức"
+  cource_status: "Trạng thái"
+  cource_featured: "Nổi bật"
+  cource_rate: "Đánh giá"
+  cource_category_selector: "--Chọn thể loại--"
+  cource_user_selector: "--Chọn người dùng--"
+  cource_province_selector: "--Chọn tỉnh thành--"
+  cource_status_selector: "--Chọn trạng thái--"
+  cource_featured_selector: "--Chọn trạng thái nổi bật--"
+  cource_rate_selector: "--Chọn điểm đánh giá--"
+  cource_search_placeholder: "Tìm kiếm khóa học"
+  cource_time_selector: "-- Chọn thời gian --"
+  cource_cost_selector: "-- Chọn giá --"
+  cource_status_0: "Lưu nháp"
+  cource_status_1: "Gửi xét duyệt"
+  cource_status_2: "Hủy duyệt"
+  cource_status_3: "Duyệt"
+  cource_status_4: "Không trạng thái"
+  cource_featured_0: "Thường"
+  cource_featured_1: "Nổi bật"
+  cource_featured_2: "VIP (được tài trợ)"
+  cource_featured_3: "Không nổi bật"
+  cource_rate_nil: "Không rate"
+  cource_lastest: "Khóa học mới nhất"
+  cource_vip: "Khóa học được tài trợ"
+  cource_email: "Email khóa học"
+  cource_seen: "Khóa học đã xem"
+  cource_posted: "Khóa học đã đăng"
+  #BACHPX END ADD 20161024
+
+  #BACHPX START 
+  #MESSAGE ERROR
+    # errors_messages_email: "Vui lòng nhập đúng định dạng email."
+    # errors_messages_url: "Vui lòng nhập đúng định dạng url."
+  #BACHPX END
+  #THUYNT START 20161026
+  #SCREEN BANNER
+  banner_index_title: "Banner"
+  banner_new_title: "Thêm mới"
+  banner_edit_title: "Chỉnh sửa"
+  banner_show_title: "Chi tiết"
+  banner_name: "Tên banner"
+  banner_search_placeholder: "Nhập tên banner để tìm kiếm"
+  banner_name: "Tên banner"
+  banner_image: "Ảnh đại diện"
+  banner_url: "Đường dẫn"
+  banner_position: "Vị trí"
+  banner_status: "Trạng thái"
+  banner_position_1: "Vị trí 1 ngay cạnh slide"
+  banner_position_2: "Vị trí xen giữa danh sách khóa học"
+  banner_status_0: "Không hiển thị"
+  banner_status_1: "Hiển thị"
+  banner_size_image_hint: "Kích thước tối thiều nên là 300px*300px"
+  #THUYNT END 20161026
+  #SCREEN CATEGORY
+  category_index_title: "Danh mục khóa học"
+  category_new_title: "Thêm mới"
+  category_edit_title: "Chỉnh sửa"
+  category_show_title: "Chi tiết"
+  category_name: "Tên danh mục khóa học"
+  category_search_placeholder: "Nhập tên danh mục khóa học để tìm kiếm"
+  category_order: "Vị trí"
+  category_description: "Mô tả"
+  undestroy_category: "không được xóa danh mục khóa học. Vui lòng xóa tất cả khóa học liên quan trước"
+  #SONDN END 20161026
+
+  #ThinhLV START 20161028
+  #SCREEN SLIDES
+  slide_index_title: "Slides"
+  slide_new_title: "Thêm mới"
+  slide_edit_title: "Chỉnh sửa"
+  slide_show_title: "Chi tiết"
+  slide_name: "Tên"
+  slide_description: "Mô tả"
+  slide_placeholder: "Tìm slide"
+  slide_image: "Hình ảnh"
+  slide_status: "Trạng thái"
+  #Thinhlv End 20161028
+
+  #TRANGPT START 20161027
+  #SCREEN CATEGORY_NEWS
+  category_news_index_title: "Danh mục tin tức"
+  category_news_new_title: "Thêm mới"
+  category_news_edit_title: "Chỉnh sửa"
+  category_news_show_title: "Chi tiết"
+  category_news_name: "Tên"
+  category_news_description: "Mô tả"
+  category_news_search_placeholder: "Nhập tên để tìm kiếm"
+  #TRANGPT END 20161027
+  #DuyAnh
+  feedbacks_search_placeholder: "Vui lòng nhập mô tả"
+  feedbacks_index_title: "Phản hồi"
+  feedbacks_new_title: "Thêm mới"
+  #DuyAnhend
+
+  # Luan star Configs 20161102
+  config_index_title: "Cấu hình"
+  config_import_error: "Import cấu hình lỗi"
+  config_import_success: "Import cấu hình thành công"
+  config_code: "Mã cấu hình"
+  config_value: "Giá trị cấu hình"
+  config_search_placeholder: "Tìm kiếm"
+  config_index_title: "Cấu hình"
+  config_edit_title: "Sửa"
+  config_new_title: " Thêm mới"
+  # Luan end Configs 20161102
+
+  # Luan star tags 20161102
+  tag_index_title: "Kiểu thẻ"
+  tag_import_error: "Import thẻ không thành công"
+  tag_import_success: "Import thẻ thành công"
+  tag_name: "Tên thẻ"
+  tag_search_placeholder: "Tìm kiếm thẻ"
+  tag_edit_title: "Sửa kiểu thẻ"
+
+  # Luan end tags 20161102
+  feedback_description: "Mô tả thông tin phản hồi"
+  feedback_index_title: "Tiêu đề phản hồi"
+  feedback_import_error: "Import phản hồi không thành công"
+  feedback_edit_title: "Sửa phản hồi"
+  feedbacks_new_title: "Phản hồi mới"
+  #BACHPX START 
+  #MESSAGE ERROR
+    # errors_messages_email: "Vui lòng nhập đúng định dạng email."
+    # errors_messages_url: "Vui lòng nhập đúng định dạng url."
+  #BACHPX END
+
+  #BACHPX START
+  home: "Trang chủ"
+  news: "Tin tức"
+  admin: "BLOOMGOO"
+  news_page_heading: "BLOOMGOO TIN TỨC"
+  posted_on: " Đăng ngày "
+  read_more: "Đọc thêm"
+  by: " bởi "
+  blog_search: "Tìm kiếm tin tức"
+  blog_categories: "DANH MỤC"
+  related_news: "Tin tức liên quan"
+
+  related: "Khóa học liên quan khác"
+  category_related: "Khóa học hay cho bạn"
+  # Luan star tags 20161110
+  user_cource_manager: "Quản lý khóa học"
+  user_cource_register: "Đăng ký khóa học"
+  user_cources_registed: "Khóa học đã đăng"
+  user_cources_viewed: "Khóa học đã xem"
+  cource_registed: "Danh sách khóa học đã đăng"
+  cource_viewed: " Danh sách khóa học đã xem"
+  cource_draft: "Lưu nháp"
+  cource_pendding_approved: "Xuất bản"
+  # Luan end tags 20161110

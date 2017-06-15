@@ -1,0 +1,14 @@
+<%= simple_form_for [:admin, @dashboard] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :col1, label: t(:dashboard_col1) %>
+    <%= f.input :col2, label: t(:dashboard_col2) %>
+    <%= f.input :col3, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } } %>
+    <%= f.input :image, label: t(:dashboard_image), as: :file %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, t(:update) %> <%= link_to t(:back), admin_dashboards_path %>
+  </div>
+<% end %>

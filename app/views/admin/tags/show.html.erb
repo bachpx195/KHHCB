@@ -1,0 +1,9 @@
+<h1><%= t(:tag_index_title) %> : <%= t(:show) %></h1>
+
+<p>
+  <strong><%= t(:tag_name) %></strong>
+  <%= @tag.name %>
+</p>
+
+<%= link_to t(:edit), edit_admin_tag_path(@tag) %> |
+<%= link_to t(:back), admin_tags_path %>

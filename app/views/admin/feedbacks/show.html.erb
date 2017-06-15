@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t(:feedback_Description) %></strong>
+  <%= @feedback.description %>
+</p>
+
+<%= link_to t(:edit), edit_admin_feedback_path(@feedback) %> |
+<%= link_to t(:back), admin_feedbacks_path %>

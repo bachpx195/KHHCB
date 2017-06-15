@@ -1,0 +1,65 @@
+<div class="col-lg-9">
+  <div class="row">
+    <div class="col-lg-6">
+      <h4>DANH SÁCH KHÓA HỌC</h4>
+    </div>
+    <div class="col-lg-6">
+      <div class="btn-group pull-right" role="group" aria-label="...">
+        <button type="button" class="btn btn-default" id="events-grid"><span class="glyphicon glyphicon-th"></span>
+        </button>
+        <button type="button" class="btn btn-default" id="events-list"><span class="glyphicon glyphicon-list"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="spacer10"></div>
+
+  <!--COURCES-->
+  <div class="row">
+    <!--LIST-->
+    <% @cources.each_with_index do |cource, index| %>
+        <div class="list-mode">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <%= render 'shared/cource', :cource => cource, :type => 4 %>
+            <% if index == 3 %>
+                <% if @banner2 != nil %>
+                    <br>
+                    <%= render "banner2" %>
+                <% end %>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+
+    <!--GRID-->
+    <% @cources.each_with_index do |cource, index| %>
+        <div class="grid-mode">
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            <%= render 'shared/cource', :cource => cource, :type => 3 %>
+          </div>
+          <% if index == 3 %>
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <% if @banner2 != nil %>
+                    <br>
+                    <%= render "banner2" %>
+                <% end %>
+              </div>
+          <% end %>
+        </div>
+    <% end %>
+
+    <div id="cource-list"></div>
+
+  </div>
+
+  <!--READMORE-->
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <input id="page" value="1" hidden>
+      <input id="type" value="0" hidden>
+      <button type="button" class="btn btn-danger" id="addCource">Xem thêm</button>
+    </div>
+  </div>
+
+  <div class="spacer20"></div>
+</div>

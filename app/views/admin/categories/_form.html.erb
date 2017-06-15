@@ -1,0 +1,12 @@
+<%= simple_form_for [:admin, @category] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: t(:category_name) %>
+    <%= f.input :description,label: t(:category_description) %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, t(:update) %> | <%= link_to t(:back), admin_categories_path %>
+  </div>
+<% end %>

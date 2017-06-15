@@ -1,0 +1,75 @@
+<h1><%= t(:user_index_title) %> : <%= t(:show) %></h1>
+
+<!--PHONGVD UPDATE 20161024-->
+<p>
+  <strong><%= t(:user_group) %>:</strong>
+  <%= @user.group.name %>
+</p>
+
+<p>
+  <strong><%= t(:user_first_name) %>:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong><%= t(:user_last_name) %>:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong><%= t(:user_email) %>:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong><%= t(:user_avatar) %>:</strong>
+  <%= image_tag @user.avatar.url(:thumb) %>
+</p>
+
+<p>
+  <strong><%= t(:user_birthday) %>:</strong>
+  <%= @user.birthday.strftime("%d/%m/%Y") %>
+</p>
+
+<p>
+  <strong><%= t(:user_phone) %>:</strong>
+  <%= @user.phone %>
+</p>
+
+<p>
+  <strong><%= t(:user_address) %>:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong><%= t(:user_description) %>:</strong>
+  <%= @user.description %>
+</p>
+
+<p>
+  <strong><%= t(:user_website) %>:</strong>
+  <%= @user.website %>
+</p>
+
+<p>
+  <strong><%= t(:user_facebook) %>:</strong>
+  <%= @user.facebook %>
+</p>
+
+<p>
+  <strong><%= t(:user_organization) %>:</strong>
+  <%= @user.organization %>
+</p>
+
+<p>
+  <strong><%= t(:user_actived) %>:</strong>
+  <% if @user.actived==0%><%= t(:user_actived_0)%>
+      <% elsif @user.actived==1%><%= t(:user_actived_1)%>
+  <% elsif @user.actived==2 %> <%= t(:user_actived_2)%>
+  <% end %>
+
+</p>
+
+<%= link_to t(:edit), edit_admin_user_path(@user), class: 'btn btn-default' %> |
+<%= link_to t(:back), admin_users_path %>
+<!--PHONGVD END UPDATE 20161024-->

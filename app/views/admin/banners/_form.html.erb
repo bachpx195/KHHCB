@@ -1,0 +1,33 @@
+<%= simple_form_for [:admin, @banner], :html => { :multipart => true } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: t(:banner_name) %>
+    <!--TOANDK EDIT 17-11-2016-->
+    <div id="pictureInput">
+      <%= f.input :image, label: t(:banner_image), as: :file %>
+    </div>
+    <div id="target">
+      <% if !@banner.image.blank? %>
+          <img src="<%= @banner.image.url %>" style="max-height: 100px; width: auto%">
+      <% end %>
+    </div>
+
+    <!--TOANDK EDIT 17-11-2016-->
+    <!--<%= image_tag @banner.image.url(:thumb) %>-->
+    <!--<% if f.object.image? %>-->
+        <!--<%= image_tag @banner.image.url(:thumb) %>-->
+    <!--<% end %>-->
+    <%= f.hint t(:banner_size_image_hint) %>
+    <%= f.input :url, :label=> t(:banner_url) %>
+    <%= f.input :position, label: t(:banner_position),  :collection=> [[ t(:banner_position_1), 1] , [t(:banner_position_2), 2]]%>
+    <%= f.input :status ,label: t(:banner_status),  :collection=> [[ t(:banner_status_0), 0] , [t(:banner_status_1), 1]]  %>
+  </div>
+
+  <div class="form-actions" >
+    <%= f.button :submit, t(:update) %> <%= link_to t(:back), admin_banners_path %>
+  </div>
+
+
+<% end %>
+<br/>

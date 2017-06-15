@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-lg-4">
+    <%= simple_form_for :search, url: admin_news_index_path, :method => :get do |f| %>
+
+        <div class="input-group">
+          <%= f.text_field :title, placeholder: t(:news_search_placeholder), class: 'form-control' %>
+
+          <span class="input-group-btn">
+            <%= f.button :submit, t(:search), class: 'btn btn-default' %>
+          </span>
+        </div>
+    <%- end %>
+  </div>
+  <div class="col-lg-8">
+    <div class="pull-right">
+      <%= link_to (raw("<button type=\"button\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-plus\"></span> " + t(:new) + "</button>")), new_admin_news_path %>
+      <%= link_to (raw("<button type=\"button\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-download-alt\"></span> " + t(:export) + "</button>")), admin_news_index_path(format: :xlsx) %>
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#importModal">
+        <span class="glyphicon glyphicon-paperclip"></span> <%= t(:import) %></button>
+    </div>
+  </div>
+</div><!-- /.row -->

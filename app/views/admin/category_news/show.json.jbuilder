@@ -1,0 +1,1 @@
+json.partial! "category_news/category_news", category_news: @category_news

@@ -1,0 +1,43 @@
+<div class="row">
+  <%= simple_form_for :search, url: admin_cources_path, :method => :get do |f| %>
+      <div class="form-inline text-center">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span> <%= t(:province) %></span>
+            <%= f.input :province, label: false, class: 'form-control', collection: Province.all, label_method: "name", value_method: "id", include_blank: t(:cource_province_selector), :input_html => {:onchange => "this.form.submit();"}, :selected => (params[:search].nil?) ? '' : params[:search][:province] %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-book"></span> <%= t(:category) %></span>
+            <%= f.input :category, label: false, class: 'form-control', collection: Category.all, label_method: "name", value_method: "id", include_blank: t(:cource_category_selector), :input_html => {:onchange => "this.form.submit();"}, :selected => (params[:search].nil?) ? '' : params[:search][:category] %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span> <%= t(:time) %></span>
+            <%= f.input :time, label: false, class: 'form-control', :collection => [[t(:time_coming), 1], [t(:time_in_progress), 2], [t(:time_pass), 3]], include_blank: t(:cource_time_selector), :input_html => {:onchange => "this.form.submit();"}, :selected => (params[:search].nil?) ? '' : params[:search][:time] %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span> <%= t(:cost) %></span>
+            <%= f.input :cost, label: false, class: 'form-control', :collection => [[t(:cost_free), 0], [t(:cost_cost), 1]], include_blank: t(:cource_cost_selector), :input_html => {:onchange => "this.form.submit();"}, :selected => (params[:search].nil?) ? '' : params[:search][:cost] %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.button :submit, t(:search), class: 'btn btn-primary' %>
+        </div>
+      </div>
+      <br>
+        <div class="pull-right" style="margin-right: 15px;">
+          <%= link_to (raw("<button type=\"button\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-plus\"></span> " + t(:new) + "</button>")), new_admin_cource_path %>
+          <%= link_to (raw("<button type=\"button\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-download-alt\"></span> " + t(:export) + "</button>")), admin_cources_path(format: :xlsx) %>
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#importModal"><span class="glyphicon glyphicon-paperclip"></span> <%= t(:import) %></button>
+        </div>
+  <%- end %>
+</div><!-- /.row -->

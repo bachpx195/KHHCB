@@ -1,0 +1,17 @@
+<h1><%= t(:feedbacks_index_title) %> </h1>
+<div class="row">
+  <div class="col-md-12">
+    <%= simple_form_for @feedback do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :description, label: t(:feedback_description) %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, t(:update) %> <%= link_to t(:back), feedbacks_path %>
+        </div>
+    <% end %>
+  </div>
+</div>
+<hr>

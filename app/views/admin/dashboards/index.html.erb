@@ -1,0 +1,171 @@
+<div class="row">
+
+  <div class="col-lg-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= t(:statistic)%></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row" style="font-size: 30px">
+          <div class="col-lg-4"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <%= @cources.count() %> đã đăng ký</div>
+          <div class="col-lg-4"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <%= @courcesF.count() %> nổi bật</div>
+          <div class="col-lg-4"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> <%= @courcesV.count() %> VIP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-3">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= t(:category_index_title)%></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="list-group">
+              <% @categories.each do |category| %>
+                  <li class="list-group-item">
+                    <span class="badge"><%= category.cources.count() %></span>
+                    <%= category.name %>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= t(:quick_link)%></h3>
+      </div>
+      <div class="panel-body">
+        <span class="glyphicon glyphicon-arrow-right"></span> <%= link_to t(:cource_index_title), admin_cources_path %><br/>
+        <span class="glyphicon glyphicon-arrow-right"></span> <%= link_to t(:category_index_title), admin_categories_path %><br/>
+        <span class="glyphicon glyphicon-arrow-right"></span> <%= link_to t(:news_title), admin_news_index_path %><br/>
+        <span class="glyphicon glyphicon-arrow-right"></span> <%= link_to t(:category_index_title), admin_category_news_index_path %><br/>
+        <span class="glyphicon glyphicon-arrow-right"></span> <%= link_to t(:banner_index_title), admin_banners_path %><br/>
+        <span class="glyphicon glyphicon-arrow-right"></span> <%= link_to t(:slide_index_title), admin_slides_path %><br/>
+        <span class="glyphicon glyphicon-arrow-right"></span> <%= link_to t(:user_index_title), admin_users_path %><br/>
+        <span class="glyphicon glyphicon-arrow-right"></span> <%= link_to t(:feedbacks_index_title), admin_feedbacks_path %><br/>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-lg-9">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= t(:cource_lastest)%></h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-12">
+                <table class="table table-bordered table-striped table-responsive">
+                  <thead>
+                  <tr>
+                    <th width="45"><%= t(:index) %></th>
+                    <th><%= t(:cource_name) %></th>
+                    <th><%= t(:cource_category)%></th>
+                    <th><%= t(:cource_cost) %></th>
+                    <th><%= t(:cource_organization_name) %></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <% @courcesL.each_with_index do |cource,index| %>
+                      <tr>
+                        <td class="text-center"><%= index + 1  %></td>
+                        <td><%= link_to  cource.name, [:admin, cource] %></td>
+                        <td><%= cource.category.name %></td>
+                        <td><%= number_with_delimiter(cource.cost, delimiter: ".", separator: ",") %> VNĐ</td>
+                        <td><%= cource.organization_name %></td>
+                      </tr>
+                  <% end %>
+                  </tbody>
+                </table>
+
+                <%= link_to (raw("<button type=\"button\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-arrow-right\"></span> "+ t(:readmore) +"</button>")), admin_cources_path %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= t(:cource_vip)%></h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-12">
+                <table class="table table-bordered table-striped table-responsive">
+                  <thead>
+                  <tr>
+                    <th width="45"><%= t(:index) %></th>
+                    <th><%= t(:cource_name) %></th>
+                    <th><%= t(:cource_category)%></th>
+                    <th><%= t(:cource_cost) %></th>
+                    <th><%= t(:cource_organization_name) %></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <% @courcesV.each_with_index do |cource,index| %>
+                      <tr>
+                        <td class="text-center"><%= index + 1  %></td>
+                        <td><%= link_to  cource.name, [:admin, cource] %></td>
+                        <td><%= cource.category.name %></td>
+                        <td><%= number_with_delimiter(cource.cost, delimiter: ".", separator: ",") %> VNĐ</td>
+                        <td><%= cource.organization_name %></td>
+                      </tr>
+                  <% end %>
+                  </tbody>
+                </table>
+
+                <%= link_to (raw("<button type=\"button\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-arrow-right\"></span> "+ t(:readmore) +"</button>")), admin_cources_path %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= t(:cource_featured)%></h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-12">
+                <table class="table table-bordered table-striped table-responsive">
+                  <thead>
+                  <tr>
+                    <th width="45"><%= t(:index) %></th>
+                    <th><%= t(:cource_name) %></th>
+                    <th><%= t(:cource_category)%></th>
+                    <th><%= t(:cource_cost) %></th>
+                    <th><%= t(:cource_organization_name) %></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <% @courcesF.each_with_index do |cource,index| %>
+                      <tr>
+                        <td class="text-center"><%= index + 1  %></td>
+                        <td><%= link_to  cource.name, [:admin, cource] %></td>
+                        <td><%= cource.category.name %></td>
+                        <td><%= number_with_delimiter(cource.cost, delimiter: ".", separator: ",") %> VNĐ</td>
+                        <td><%= cource.organization_name %></td>
+                      </tr>
+                  <% end %>
+                  </tbody>
+                </table>
+
+                <%= link_to (raw("<button type=\"button\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-arrow-right\"></span> "+ t(:readmore) +"</button>")), admin_cources_path %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

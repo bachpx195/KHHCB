@@ -1,0 +1,50 @@
+<!--<div class="pull-right">-->
+<!--<%= link_to (raw("<button type=\"button\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-save\"></span> " + t(:cource_draft) + "</button>")), publish_cources_path %>-->
+<!--<%= link_to (raw("<button type=\"button\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-ok\"></span> " + t(:cource_pendding_approved) + "</button>")), cources_path %>-->
+<!--</div>-->
+<br/>
+<%= simple_form_for (@cource) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.association :category, include_blank: t(:cource_category_selector), :label_method => lambda { |owner| "#{owner.name}" }, label: t(:cource_category) %>
+      <%= f.input :name, label: t(:cource_name) %>
+      <%= f.association :province, include_blank: t(:cource_province_selector), :label_method => lambda { |owner| "#{owner.name}" }, label: t(:cource_province) %>
+      <%= f.input :start_date, label: t(:cource_start_date) %>
+      <%= f.input :schedule, label: t(:cource_schedule) %>
+      <%= f.input :cource_date, label: t(:cource_date) %>
+      <%= f.input :duration, label: t(:cource_duration) %>
+      <%= f.input :end_date, label: t(:cource_end_date) %>
+      <%= f.input :address, label: t(:cource_address) %>
+      <%= f.input :cost, label: t(:cource_cost) %>
+      <%= f.input :cost_description, label: t(:cource_cost_description) %>
+      <%= f.input :promotion, label: t(:cource_promotion) %>
+      <%= f.input :promotion_description, label: t(:cource_promotion_description) %>
+      <!--TOANDK EDIT 17-11-2016-->
+      <div id="pictureInput">
+        <%= f.input :image, label: t(:cource_image), as: :file %>
+      </div>
+      <div id="target">
+      </div>
+      <br>
+      <!--TOANDK EDIT 17-11-2016-->
+      <%= f.input :content, label: t(:cource_content), as: :ckeditor, input_html: {ckeditor: {toolbar: 'Full'}} %>
+      <%= f.input :representative, label: t(:cource_representative) %>
+      <%= f.input :email, label: t(:cource_email) %>
+      <%= f.input :hotline, label: t(:cource_hotline) %>
+      <%= f.input :organization_name, label: t(:cource_organization_name) %>
+      <%= f.input :organization_address, label: t(:cource_organization_address) %>
+      <%= f.input :organization_phone, label: t(:cource_organization_phone) %>
+      <%= f.input :organization_email, label: t(:cource_organization_email) %>
+      <%= f.input :organization_website, label: t(:cource_organization_website) %>
+      <%= f.input :organization_facebook, label: t(:cource_organization_facebook) %>
+    </div>
+
+    <br/>
+    <div class="form-actions">
+      <div class="pull-right">
+        <%= f.button :submit, class: "btn btn-primary", value: t(:cource_pendding_approved), name: "commit" %>
+        <%= f.button :submit, class: "btn btn-success", value: t(:cource_draft), name: "commit" %>
+      </div>
+    </div>
+<% end %>

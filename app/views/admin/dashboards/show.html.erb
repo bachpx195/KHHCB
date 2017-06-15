@@ -1,0 +1,19 @@
+<h1><%= t(:dashboard_index_title) %> : <%= t(:show) %></h1>
+
+<p>
+  <strong><%= t(:dashboard_col1) %>:</strong>
+  <%= @dashboard.col1 %>
+</p>
+
+<p>
+  <strong><%= t(:dashboard_col2) %>:</strong>
+  <%= @dashboard.col2 %>
+</p>
+
+<p>
+  <strong><%= t(:dashboard_col3) %>:</strong>
+  <%= raw(@dashboard.col3) %>
+</p>
+
+<%= link_to t(:edit), edit_admin_dashboard_path(@dashboard), class: 'btn btn-default' %> |
+<%= link_to t(:back), admin_dashboards_path %>

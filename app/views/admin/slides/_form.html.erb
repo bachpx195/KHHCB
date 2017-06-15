@@ -1,0 +1,26 @@
+<%= simple_form_for [:admin, @slide] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: t(:slide_name) %>
+    <!--TOANDK EDIT 17-11-2016-->
+    <div id="pictureInput">
+      <%= f.input :image, label: t(:slide_image), as: :file %>
+    </div>
+    <div id="target">
+    </div>
+    <br>
+    <!--TOANDK EDIT 17-11-2016-->
+    <%= f.input :description, label: t(:slide_description) %>
+    <%= f.input :url %>
+    <!--same banner-->
+    <%= f.input :status ,label: t(:slide_status),  :collection=> [[ t(:banner_status_0), 0] , [t(:banner_status_1), 1]] , :checked => [0] %>
+  </div>
+
+  <div class="form-actions">
+    <div class="form-actions">
+      <%= f.button :submit, t(:update) %> <%= link_to t(:back), admin_slides_path %>
+    </div>
+  </div>
+    <br>
+<% end %>

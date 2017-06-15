@@ -1,0 +1,144 @@
+<h1><%= t(:cource_index_title) %> : <%= t(:show) %></h1>
+
+<p>
+  <strong><%= t(:cource_category) %></strong>
+  <%= @cource.category.name %>
+</p>
+
+<p>
+  <strong><%= t(:cource_user) %></strong>
+  <%= @cource.user.email %>
+</p>
+
+<p>
+  <strong><%= t(:cource_name) %></strong>
+  <%= @cource.name %>
+</p>
+
+<p>
+  <strong><%= t(:cource_province) %></strong>
+  <%= @cource.province.name %>
+</p>
+
+<p>
+  <strong><%= t(:cource_start_date) %></strong>
+  <%= @cource.start_date %>
+</p>
+
+<p>
+  <strong><%= t(:cource_schedule) %></strong>
+  <%= @cource.schedule %>
+</p>
+
+<p>
+  <strong><%= t(:cource_date) %></strong>
+  <%= @cource.cource_date %>
+</p>
+
+<p>
+  <strong><%= t(:cource_duration) %></strong>
+  <%= @cource.duration %>
+</p>
+
+<p>
+  <strong><%= t(:cource_end_date) %></strong>
+  <%= @cource.end_date %>
+</p>
+
+<p>
+  <strong><%= t(:cource_address) %></strong>
+  <%= @cource.address %>
+</p>
+
+<p>
+  <strong><%= t(:cource_cost) %></strong>
+  <%= @cource.cost %>
+</p>
+
+<p>
+  <strong><%= t(:cource_cost_description) %></strong>
+  <%= @cource.cost_description %>
+</p>
+
+<p>
+  <strong><%= t(:cource_promotion) %></strong>
+  <%= @cource.promotion %>
+</p>
+
+<p>
+  <strong><%= t(:cource_promotion_description) %></strong>
+  <%= @cource.promotion_description %>
+</p>
+
+<p>
+  <strong><%= t(:cource_image) %></strong>
+  <%= image_tag @cource.image.url(:thumb) %>
+</p>
+
+<p>
+  <strong><%= t(:cource_content) %></strong>
+  <%= raw(@cource.content) %>
+</p>
+
+<p>
+  <strong><%= t(:cource_representative) %></strong>
+  <%= @cource.representative %>
+</p>
+
+<p>
+  <strong><%= t(:cource_email) %></strong>
+  <%= @cource.email %>
+</p>
+
+<p>
+  <strong><%= t(:cource_hotline) %></strong>
+  <%= @cource.hotline %>
+</p>
+
+<p>
+  <strong><%= t(:cource_organization_name) %></strong>
+  <%= @cource.organization_name %>
+</p>
+
+<p>
+  <strong><%= t(:cource_organization_address) %></strong>
+  <%= @cource.organization_address %>
+</p>
+
+<p>
+  <strong><%= t(:cource_organization_phone) %></strong>
+  <%= @cource.organization_phone %>
+</p>
+
+<p>
+  <strong><%= t(:cource_organization_email) %></strong>
+  <%= @cource.organization_email %>
+</p>
+
+<p>
+  <strong><%= t(:cource_organization_website) %></strong>
+  <%= @cource.organization_website %>
+</p>
+
+<p>
+  <strong><%= t(:cource_organization_facebook) %></strong>
+  <%= @cource.organization_facebook %>
+</p>
+
+<p>
+  <strong><%= t(:cource_status) %></strong>
+  <%= status_convert_cources(@cource.status) %>
+</p>
+
+<p>
+  <strong><%= t(:cource_featured) %></strong>
+  <%= featured_convert(@cource.featured) %>
+</p>
+
+<p>
+  <strong><%= t(:cource_rate) %></strong>
+  <%= @cource.rate %>
+</p>
+
+<%= link_to t(:edit), edit_admin_cource_path(@cource), class: 'btn btn-default' %> |
+<%= link_to t(:back), admin_cources_path %>

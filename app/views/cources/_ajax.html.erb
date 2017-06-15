@@ -1,0 +1,39 @@
+<!--LIST-->
+<% @cources.each_with_index do |cource, index| %>
+    <% if @type == '0'  %>
+        <div class="list-mode hidden">
+    <% else  %>
+        <div class="list-mode">
+    <% end  %>
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <%= render 'shared/cource', :cource => cource, :type => 4 %>
+        <% if index == 3 %>
+            <% if @banner2 != nil %>
+                <br>
+                <%= render "banner2" %>
+                <br>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+<% end %>
+
+<!--GRID-->
+<% @cources.each_with_index do |cource, index| %>
+    <% if @type == '1'  %>
+        <div class="grid-mode hidden">
+    <% else  %>
+        <div class="grid-mode">
+    <% end  %>
+      <div class="col-sm-6 col-md-6 col-lg-6">
+          <%= render 'shared/cource', :cource => cource, :type => 3 %>
+        <% if index == 3 %>
+            <% if @banner2 != nil %>
+                <br>
+                <%= render "banner2" %>
+                <br>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+<% end %>
